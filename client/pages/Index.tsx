@@ -42,9 +42,9 @@ export default function Index() {
     {
       id: 2,
       name: "Neuberger Berman",
-      title: "Investment strategy visualizations",
+      title: "Ensured consistency with branding standards",
       description:
-        "Created comprehensive visual narratives for investment strategies and market insights",
+        "Built a cohesive brand system through minimalist typography, conceptual imagery, and color across presentations, data visualizations, fact sheets, thought leadership, and social media.",
       bg: "bg-[#003D5C]",
       logo: "https://cdn.builder.io/api/v1/image/assets%2Fe93b2a78ba78436581c5c53fa3d50c75%2Feb1bdd58726e45ec9e6d0967b8b451d5?format=webp&width=800",
       images: [animationNB],
@@ -52,9 +52,9 @@ export default function Index() {
     {
       id: 3,
       name: "Morgan Stanley",
-      title: "Data visualization excellence",
+      title: "Analyzed business competitiveness and constructed market positioning",
       description:
-        "Developed sophisticated data visualizations for financial reporting and client presentations",
+        "Persuaded audiences by visualizing dynamic imagery that represents positioning and demonstrates how it solves problems or elevates value through data-driven charts and infographics.",
       bg: "bg-[#00447C]",
       logo: "https://cdn.builder.io/api/v1/image/assets%2Fe93b2a78ba78436581c5c53fa3d50c75%2Fba29ce9e16ee45d787f681d95d7497df?format=webp&width=800",
       images: [animationMS],
@@ -335,39 +335,62 @@ export default function Index() {
             {projects.map((project) => (
               <div
                 key={project.id}
-                className={`w-full flex-shrink-0 ${project.bg} text-white`}
+                className={`w-full flex-shrink-0 overflow-hidden ${project.bg} text-white`}
               >
-                <div className="min-h-[420px] md:min-h-[520px] lg:min-h-[600px] flex items-center">
+                <div className="min-h-[420px] md:min-h-[520px] lg:min-h-[600px] flex items-start">
                   {/* Inner content constrained and centered */}
                   <div className="max-w-7xl mx-auto w-full px-6 py-12 md:py-16">
                     <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                       {/* Left Content */}
                       <div className="max-w-xl space-y-6 lg:space-y-8">
-                        {project.logo && (
-                          <img
-                            src={project.logo}
-                            alt={project.name}
-                            className="h-6 md:h-7"
-                          />
-                        )}
-                        <h3 className="text-3xl md:text-4xl lg:text-5xl font-normal leading-tight">
-                          {project.title}
-                        </h3>
-                        <p
-                          className="text-lg md:text-xl opacity-90"
-                          style={{ lineHeight: 2.5 }} // tweak 1.7–2.1 as you like
+                        <div className="h-8 md:h-9 flex items-center">
+                          {project.logo && (
+                            <img
+                              src={project.logo}
+                              alt={project.name}
+                              className={`max-h-6 md:max-h-7 w-auto transform ${
+                                project.name === "Neuberger Berman"
+                                  ? "-translate-y-6 md:-translate-y-7"
+                                  : project.name === "Morgan Stanley"
+                                  ? "translate-y-3 md:translate-y-5"
+                                  : ""
+                              }`}
+                            />
+                          )}
+                        </div>
+
+                        <div
+                          className={`space-y-4 ${
+                            project.name === "Neuberger Berman"
+                              ? "-translate-y-4 md:-translate-y-5" // raise NB text
+                              : project.name === "Morgan Stanley"
+                              ? "translate-y-3 md:translate-y-5"    // lower MS text
+                              : ""
+                          }`}
                         >
-                          {project.description}
-                        </p>
+                          <h3 className="text-3xl md:text-4xl lg:text-5xl font-normal leading-tight">
+                            {project.title}
+                          </h3>
+                          <p
+                            className="text-lg md:text-xl opacity-90"
+                            style={{ lineHeight: 2 }}
+                          >
+                            {project.description}
+                          </p>
+                        </div>
                       </div>
 
                       {/* Right Content - Project Images */}
                       {project.images && project.images.length > 0 && (
-                        <div className="relative h-80 md:h-full min-h-80 flex items-center overflow-visible">
+                        <div className="relative h-80 md:h-[420px] lg:h-[460px] flex items-center overflow-visible">
                           <img
                             src={project.images[0]}
                             alt={`${project.name} work`}
-                            className="w-full h-full object-contain rounded-lg opacity-90 scale-125 transform translate-x-8 md:translate-x-11"
+                            className={`w-full h-full object-contain rounded-lg opacity-90 transform ${
+                              project.name === "ClearBridge"
+                                ? "translate-x-16 md:translate-x-24 translate-y-200 md:translate-y-200 scale-150"
+                                : "translate-x-8 md:translate-x-11 scale-125"
+                            }`}
                           />
                         </div>
                       )}
@@ -381,7 +404,7 @@ export default function Index() {
           {/* Navigation Arrows */}
           <button
             onClick={prevProject}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-colors z-10"
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 transition-colors z-10"
             aria-label="Previous project"
           >
             <svg
@@ -391,14 +414,14 @@ export default function Index() {
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
-              className="text-white"
+              className="text-black"
             >
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
           <button
             onClick={nextProject}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-3 transition-colors z-10"
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 transition-colors z-10"
             aria-label="Next project"
           >
             <svg
@@ -408,7 +431,7 @@ export default function Index() {
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
-              className="text-white"
+              className="text-black"
             >
               <path d="M9 18l6-6-6-6" />
             </svg>
@@ -433,8 +456,8 @@ export default function Index() {
       </section>
 
       {/* Experience Statement */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-4">
+      <section className="py-16 md:py-24 flex items-center">
+        <div className="w-full flex flex-col items-center px-6 text-center space-y-4 -translate-y-8 md:-translate-y-10">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-normal text-brand-text/80 whitespace-nowrap">
             With 10+ years of experience,
           </h2>
@@ -463,7 +486,9 @@ export default function Index() {
                 />
               </a>
               <a
-                href="#"
+                href="https://drive.google.com/file/d/16ShUr7sKLXTGjCqxuMdis54kbCkp7d8_/view"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 text-brand-text/80 hover:text-brand-blue transition-colors"
               >
                 <svg
