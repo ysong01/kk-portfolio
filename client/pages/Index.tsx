@@ -97,7 +97,7 @@ export default function Index() {
               <img
                 src={rightWoman}
                 alt="Kay Kang"
-                className="max-w-full h-auto transform md:scale-150 lg:scale-175 md:-translate-x-16 lg:-translate-x- origin-center"
+                className="max-w-full h-auto transform md:scale-150 lg:scale-175 md:-translate-x-16 lg:-translate-x- md:translate-y-12 lg:translate-y-15 origin-center"
               />
             </div>
           </div>
@@ -390,8 +390,8 @@ export default function Index() {
                               project.name === "ClearBridge"
                                 ? "translate-x-16 md:translate-x-24 translate-y-200 md:translate-y-200 scale-150"
                                 : "translate-x-8 md:translate-x-11 scale-125"
-                            }`}
-                          />
+                            } ${project.name === "Neuberger Berman" ? "object-right" : ""}`}
+/>
                         </div>
                       )}
                     </div>
