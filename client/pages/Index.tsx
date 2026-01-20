@@ -10,10 +10,10 @@ import experienceLineTop from "@/assets/logos/Experience Line Top.svg";
 import experienceLineBottom from "@/assets/logos/Experience Line Bottom.svg";
 import msLogoFinal from "@/assets/logos/Morgan Stanley Logo FInal.png";
 import cbSocialMedia1 from "@/assets/logos/Social Media_ClearBridge 1.png";
-import animationCB from "@/assets/logos/Animation Image CB.png";
-import animationPega from "@/assets/logos/Animation Image Pega.png";
-import animationNB from "@/assets/logos/Animation Image NB.png";
-import animationMS from "@/assets/logos/Animation Image MS.png";
+import animationCB from "@/assets/logos/Animation Image CB copy.png";
+import animationPega from "@/assets/logos/Animation Image Pega copy.png";
+import animationNB from "@/assets/logos/Animation Image NB copy.png";
+import animationMS from "@/assets/logos/Animation Image MS copy.png";
 
 export default function Index() {
   const [currentProject, setCurrentProject] = useState(0);
