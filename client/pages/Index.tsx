@@ -368,7 +368,7 @@ export default function Index() {
                               : ""
                           }`}
                         >
-                          <h3 className="text-3xl md:text-4xl lg:text-5xl font-normal leading-tight">
+                          <h3 className="text-2xl md:text-3xl lg:text-4xl font-normal leading-snug">
                             {project.title}
                           </h3>
                           <p
@@ -389,6 +389,8 @@ export default function Index() {
                             className={`w-full h-full object-contain rounded-lg opacity-90 transform ${
                               project.name === "ClearBridge"
                                 ? "translate-x-16 md:translate-x-24 translate-y-200 md:translate-y-200 scale-125"
+                                : project.name === "Pega"
+                                ? "translate-x-8 md:translate-x-11 scale-150 md:scale-150"
                                 : "translate-x-8 md:translate-x-11 scale-125"
                             } ${project.name === "Neuberger Berman" ? "object-right" : ""}`}
                           />
@@ -402,55 +404,57 @@ export default function Index() {
           </div>
 
           {/* Navigation Arrows */}
-          <button
-            onClick={prevProject}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 transition-colors z-10"
-            aria-label="Previous project"
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              className="text-black"
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 z-10">
+            <button
+              onClick={prevProject}
+              className="bg-white rounded-full p-3 transition-colors"
+              aria-label="Previous project"
             >
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-          </button>
-          <button
-            onClick={nextProject}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 transition-colors z-10"
-            aria-label="Next project"
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              className="text-black"
-            >
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="text-black"
+              >
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
 
-          {/* Dots Indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-            {projects.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentProject(index)}
-                className={`transition-all ${
-                  index === currentProject
-                    ? "bg-white w-8 h-2"
-                    : "bg-white/50 hover:bg-white/70 w-2 h-2"
-                } rounded-full`}
-                aria-label={`Go to project ${index + 1}`}
-              />
-            ))}
+            <div className="flex gap-2">
+              {projects.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentProject(index)}
+                  className={`transition-all ${
+                    index === currentProject
+                      ? "bg-white w-8 h-2"
+                      : "bg-white/50 hover:bg-white/70 w-2 h-2"
+                  } rounded-full`}
+                  aria-label={`Go to project ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={nextProject}
+              className="bg-white rounded-full p-3 transition-colors"
+              aria-label="Next project"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="text-black"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
