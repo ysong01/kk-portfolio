@@ -350,10 +350,10 @@ export default function Index() {
                                 src={project.logo}
                                 alt={project.name}
                                 className={`max-h-6 md:max-h-7 w-auto transform ${
-                                  project.name === "Neuberger Berman"
-                                    ? "-translate-y-6 md:-translate-y-7"
-                                    : project.name === "Morgan Stanley"
-                                    ? "translate-y-3 md:translate-y-5"
+                                  project.name === "Morgan Stanley"
+                                    ? "translate-y+1 md:translate-y+1"
+                                    : project.name === "Neuberger Berman"
+                                    ? "-translate-y-8 md:-translate-y-10" // NB logo up slightly
                                     : ""
                                 }`}
                               />
@@ -362,10 +362,10 @@ export default function Index() {
 
                           <div
                             className={`space-y-4 ${
-                              project.name === "Neuberger Berman"
-                                ? "-translate-y-4 md:-translate-y-5" // raise NB text
-                                : project.name === "Morgan Stanley"
-                                ? "translate-y-3 md:translate-y-5"    // lower MS text
+                              project.name === "Morgan Stanley"
+                                ? "translate-y+3md:translate-y+4  "
+                                : project.name === "Neuberger Berman"
+                                ? "-translate-y-8 md:-translate-y-10" // NB text up slightly
                                 : ""
                             }`}
                           >
@@ -473,8 +473,16 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Full-width divider */}
+      <img
+        src={experienceLineBottom}
+        alt=""
+        aria-hidden="true"
+        className="w-full max-w-none block object-contain"
+      />
+
       {/* Footer */}
-      <footer className="py-12 border-t-2 border-brand-blue">
+      <footer className="py-12">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
             {/* Left - Social Links */}
@@ -497,26 +505,7 @@ export default function Index() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-brand-text/80 hover:text-brand-blue transition-colors"
               >
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  className="text-brand-dark-blue"
-                >
-                  <rect
-                    width="28"
-                    height="28"
-                    rx="4"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    fill="none"
-                  />
-                  <path
-                    d="M10 10H18M10 14H18M10 18H15"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                </svg>
+                
                 <span className="font-medium text-lg md:text-xl hidden sm:inline">
                   Portfolio
                 </span>
