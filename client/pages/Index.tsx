@@ -515,10 +515,10 @@ export default function Index() {
             {/* Right - Contact Info */}
             <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-brand-text/80">
               <a
-                href="mailto:gkang914@gmail.com"
+                href="mailto:kaykangdesign1@gmail.com"
                 className="text-lg md:text-xl hover:text-brand-blue transition-colors"
               >
-                gkang914@gmail.com
+                kaykangdesign1@gmail.com
               </a>
               <a
                 href="tel:9145227154"
