@@ -340,62 +340,64 @@ export default function Index() {
                 <div className="min-h-[420px] md:min-h-[520px] lg:min-h-[600px] flex items-start">
                   {/* Inner content constrained and centered */}
                   <div className="max-w-7xl mx-auto w-full px-6 py-12 md:py-16">
-                    <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-                      {/* Left Content */}
-                      <div className="max-w-xl space-y-6 lg:space-y-8">
-                        <div className="h-8 md:h-9 flex items-center">
-                          {project.logo && (
-                            <img
-                              src={project.logo}
-                              alt={project.name}
-                              className={`max-h-6 md:max-h-7 w-auto transform ${
-                                project.name === "Neuberger Berman"
-                                  ? "-translate-y-6 md:-translate-y-7"
-                                  : project.name === "Morgan Stanley"
-                                  ? "translate-y-3 md:translate-y-5"
-                                  : ""
-                              }`}
-                            />
-                          )}
-                        </div>
+                    <div className="max-w-5xl ml-0 mr-auto">
+                      <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                        {/* Left Content */}
+                        <div className="max-w-xl space-y-6 lg:space-y-8">
+                          <div className="h-8 md:h-9 flex items-center">
+                            {project.logo && (
+                              <img
+                                src={project.logo}
+                                alt={project.name}
+                                className={`max-h-6 md:max-h-7 w-auto transform ${
+                                  project.name === "Neuberger Berman"
+                                    ? "-translate-y-6 md:-translate-y-7"
+                                    : project.name === "Morgan Stanley"
+                                    ? "translate-y-3 md:translate-y-5"
+                                    : ""
+                                }`}
+                              />
+                            )}
+                          </div>
 
-                        <div
-                          className={`space-y-4 ${
-                            project.name === "Neuberger Berman"
-                              ? "-translate-y-4 md:-translate-y-5" // raise NB text
-                              : project.name === "Morgan Stanley"
-                              ? "translate-y-3 md:translate-y-5"    // lower MS text
-                              : ""
-                          }`}
-                        >
-                          <h3 className="text-2xl md:text-3xl lg:text-4xl font-normal leading-snug">
-                            {project.title}
-                          </h3>
-                          <p
-                            className="text-lg md:text-xl opacity-90"
-                            style={{ lineHeight: 2 }}
+                          <div
+                            className={`space-y-4 ${
+                              project.name === "Neuberger Berman"
+                                ? "-translate-y-4 md:-translate-y-5" // raise NB text
+                                : project.name === "Morgan Stanley"
+                                ? "translate-y-3 md:translate-y-5"    // lower MS text
+                                : ""
+                            }`}
                           >
-                            {project.description}
-                          </p>
+                            <h3 className="text-2xl md:text-3xl lg:text-4xl font-normal leading-snug">
+                              {project.title}
+                            </h3>
+                            <p
+                              className="text-lg md:text-xl opacity-90"
+                              style={{ lineHeight: 2 }}
+                            >
+                              {project.description}
+                            </p>
+                          </div>
                         </div>
-                      </div>
 
-                      {/* Right Content - Project Images */}
-                      {project.images && project.images.length > 0 && (
-                        <div className="relative h-80 md:h-[420px] lg:h-[460px] flex items-center overflow-visible">
-                          <img
-                            src={project.images[0]}
-                            alt={`${project.name} work`}
-                            className={`w-full h-full object-contain rounded-lg opacity-90 transform ${
-                              project.name === "ClearBridge"
-                                ? "translate-x-16 md:translate-x-24 translate-y-200 md:translate-y-200 scale-125"
-                                : project.name === "Pega"
-                                ? "translate-x-8 md:translate-x-11 scale-150 md:scale-150"
-                                : "translate-x-8 md:translate-x-11 scale-125"
-                            } ${project.name === "Neuberger Berman" ? "object-right" : ""}`}
-                          />
-                        </div>
-                      )}
+                        {/* Right Content - Project Images */}
+                        {project.images && project.images.length > 0 && (
+                          <div className="relative h-80 md:h-[420px] lg:h-[460px] flex items-center overflow-visible">
+                            <img
+                              src={project.images[0]}
+                              alt={`${project.name} work`}
+                              className={`w-full h-full object-contain rounded-lg opacity-90 transform ${
+                                project.name === "ClearBridge"
+                                  ? "translate-x-34 md:translate-x-32 translate-y-200 md:translate-y-200 scale-125"
+                                  : project.name === "Pega"
+                                  ? "translate-x-34 md:translate-x-32 scale-150 md:scale-150"
+                                  : "translate-x-34 md:translate-x-32 scale-125"
+                              } ${project.name === "Neuberger Berman" ? "object-right" : ""}`}
+                            />
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
