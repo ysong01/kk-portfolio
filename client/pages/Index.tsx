@@ -4,16 +4,14 @@ import cbLineChart from "@/assets/logos/CB Line Chart.png";
 import cbBarChart from "@/assets/logos/CB Bar Chart.png";
 import pegaPhone from "@/assets/logos/Pega Phone.png";
 import pegaLaptop from "@/assets/logos/Pega Laptop.png";
-import nbImages from "@/assets/logos/NB Images.png";
-import msImages from "@/assets/logos/MS Images.png";
 import experienceLineTop from "@/assets/logos/Experience Line Top.svg";
 import experienceLineBottom from "@/assets/logos/Experience Line Bottom.svg";
 import msLogoFinal from "@/assets/logos/Morgan Stanley Logo FInal.png";
-import cbSocialMedia1 from "@/assets/logos/Social Media_ClearBridge 1.png";
 import animationCB from "@/assets/logos/Animation Image CB copy.png";
 import animationPega from "@/assets/logos/Animation Image Pega copy.png";
 import animationNB from "@/assets/logos/Animation Image NB copy.png";
 import animationMS from "@/assets/logos/Animation Image MS copy.png";
+import AnimatedSection from "@/components/ui/animated-section";
 
 export default function Index() {
   const [currentProject, setCurrentProject] = useState(0);
@@ -72,15 +70,15 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-[#FAFDFF] font-exo">
       {/* Hero Section */}
-      <section className="relative overflow-hidden px-6 py-12 md:py-20 lg:py-24">
+      <AnimatedSection className="relative overflow-hidden px-6 py-12 md:py-20 lg:py-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center justify-items-center">
             {/* Left Content */}
             <div className="space-y-8 lg:space-y-10 text-center lg:text-left">
               <div className="space-y-3">
-<p className="text-brand-blue text-xl md:text-2xl tracking-wide">
-  DESIGN <span className="text-brand-text">by</span> KAY KANG
-</p>
+                <p className="text-brand-blue text-xl md:text-2xl tracking-wide">
+                  DESIGN <span className="text-brand-text">by</span> KAY KANG
+                </p>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-brand-text leading-tight">
                   Where Creativity
                   <br />
@@ -97,15 +95,15 @@ export default function Index() {
               <img
                 src={rightWoman}
                 alt="Kay Kang"
-                className="max-w-full h-auto transform md:scale-150 lg:scale-175 md:-translate-x-16 lg:-translate-x- md:translate-y-12 lg:translate-y-15 origin-center"
+                className="max-w-full h-auto transform md:scale-150 lg:scale-175 md:-translate-x-16 md:translate-y-12 origin-center"
               />
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Experience Section - Company Logos */}
-      <section className="py-6 md:py-8">
+      <AnimatedSection className="py-6 md:py-8">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-brand-text font-bold text-lg md:text-xl mb-4 tracking-wide">
             EXPERIENCE
@@ -194,10 +192,10 @@ export default function Index() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Philosophy Section */}
-      <section className="py-10 md:py-14 lg:py-16">
+      <AnimatedSection className="py-10 md:py-14 lg:py-16">
         <div className="max-w-6xl mx-auto px-6">
           <p
             className="text-2xl md:text-3xl text-center text-brand-text/80"
@@ -213,10 +211,10 @@ export default function Index() {
             across every medium protects and carries a brand's story.
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Capacity Section */}
-      <section className="py-12 md:py-16 bg-white/50">
+      <AnimatedSection className="py-12 md:py-16 bg-white/50">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-brand-text font-bold text-lg md:text-xl mb-6 tracking-wide">
             CAPACITY
@@ -240,7 +238,7 @@ export default function Index() {
                 </svg>
               </div>
               <p className="mt-6 text-brand-blue text-lg md:text-xl leading-relaxed">
-                Identify the business's unique differentiators, present the
+                Identify the business&apos;s unique differentiators, present the
                 problem, and show how that advantage solves it
               </p>
             </div>
@@ -286,8 +284,8 @@ export default function Index() {
                 </svg>
               </div>
               <p className="mt-6 text-brand-blue text-lg md:text-xl leading-relaxed">
-                Apply consistent design standards across typography, imagery,
-                and color to establish a cohesive brand
+                Apply consistent design standards across typography, imagery, and
+                color to establish a cohesive brand
               </p>
             </div>
 
@@ -315,10 +313,10 @@ export default function Index() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Featured Projects Section */}
-      <section className="py-16 md:py-24">
+      <AnimatedSection className="py-16 md:py-24">
         {/* Heading stays constrained */}
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-brand-text font-bold text-lg md:text-xl mb-12 tracking-wide">
@@ -350,10 +348,8 @@ export default function Index() {
                                 src={project.logo}
                                 alt={project.name}
                                 className={`max-h-6 md:max-h-7 w-auto transform ${
-                                  project.name === "Morgan Stanley"
-                                    ? "translate-y+1 md:translate-y+1"
-                                    : project.name === "Neuberger Berman"
-                                    ? "-translate-y-8 md:-translate-y-10" // NB logo up slightly
+                                  project.name === "Neuberger Berman"
+                                    ? "-translate-y-8 md:-translate-y-10"
                                     : ""
                                 }`}
                               />
@@ -362,10 +358,8 @@ export default function Index() {
 
                           <div
                             className={`space-y-4 ${
-                              project.name === "Morgan Stanley"
-                                ? "translate-y+3md:translate-y+4  "
-                                : project.name === "Neuberger Berman"
-                                ? "-translate-y-8 md:-translate-y-10" // NB text up slightly
+                              project.name === "Neuberger Berman"
+                                ? "-translate-y-8 md:-translate-y-10"
                                 : ""
                             }`}
                           >
@@ -459,10 +453,10 @@ export default function Index() {
             </button>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Experience Statement */}
-      <section className="py-16 md:py-24 flex items-center">
+      <AnimatedSection className="py-16 md:py-24 flex items-center">
         <div className="w-full flex flex-col items-center px-6 text-center space-y-4 -translate-y-8 md:-translate-y-10">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-normal text-brand-text/80 whitespace-nowrap">
             With 10+ years of experience,
@@ -471,18 +465,20 @@ export default function Index() {
             I transform vision into real-world value
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Full-width divider */}
-      <img
-        src={experienceLineBottom}
-        alt=""
-        aria-hidden="true"
-        className="w-full max-w-none block object-contain"
-      />
+      <AnimatedSection as="div" className="w-full" innerClassName="w-full">
+        <img
+          src={experienceLineBottom}
+          alt=""
+          aria-hidden="true"
+          className="w-full max-w-none block object-contain"
+        />
+      </AnimatedSection>
 
       {/* Footer */}
-      <footer className="py-12">
+      <AnimatedSection as="footer" className="py-12">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
             {/* Left - Social Links */}
@@ -505,7 +501,6 @@ export default function Index() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-brand-text/80 hover:text-brand-blue transition-colors"
               >
-                
                 <span className="font-medium text-lg md:text-xl hidden sm:inline">
                   Portfolio
                 </span>
@@ -529,7 +524,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-      </footer>
+      </AnimatedSection>
     </div>
   );
 }
