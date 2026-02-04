@@ -254,15 +254,14 @@ export default function Index() {
                   />
                 </div>
                 <h3 className="text-brand-dark-blue font-bold text-xl md:text-2xl">
-                  Web Design & Social Media Design
+                  End-to-End Product Design
                 </h3>
                 <svg width="17" height="7" viewBox="0 0 17 7" className="opacity-40">
                   <path d="M0 0L8.64407 7L17 0" stroke="#475766" />
                 </svg>
               </div>
               <p className="mt-6 text-brand-blue text-lg md:text-xl leading-relaxed">
-                Using engaging animation and video, respond quickly to emerging
-                issues
+                Lead the design lifecycle, conducting deep persona research to transform insights into high-impact flows that simplify complex journeys
               </p>
             </div>
 
