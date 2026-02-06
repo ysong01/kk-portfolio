@@ -402,12 +402,12 @@ export default function Index() {
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 z-10">
             <button
               onClick={prevProject}
-              className="bg-white rounded-full p-3 transition-colors"
+              className="bg-white rounded-full p-2 transition-colors"
               aria-label="Previous project"
             >
               <svg
-                width="24"
-                height="24"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -435,12 +435,12 @@ export default function Index() {
 
             <button
               onClick={nextProject}
-              className="bg-white rounded-full p-3 transition-colors"
+              className="bg-white rounded-full p-2 transition-colors"
               aria-label="Next project"
             >
               <svg
-                width="24"
-                height="24"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
